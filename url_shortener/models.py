@@ -6,7 +6,7 @@ from .extensions import db
 class Link(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     original_url = db.Column(db.String(512))
-    shorten_url = db.Column(db.String(14), unique=True)
+    shorten_url = db.Column(db.String(7), unique=True)
     visits = db.Column(db.Integer, default=0)
     date_created = db.Column(db.DateTime, default=datetime.now)
 
@@ -17,7 +17,7 @@ class Link(db.Model):
 
     def create_short_link(self):
         characters = string.digits + string.ascii_letters 
-        shorten_url = ''.join(choices(characters, k=14))
+        shorten_url = ''.join(choices(characters, k=7))
 
         link = self.query.filter_by(shorten_url=shorten_url).first()
 
