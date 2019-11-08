@@ -11,10 +11,11 @@
 </head>
 
 <body>
+
 <section class="hero is-primary">
     <div class="hero-body">
         <div class="container">
-            <h1 class="title" style="font-size: 100px; font-family: 'Ruge Boogie', cursive;" >
+            <h1 class="title" style="font-size: 100px; font-family: 'Ruge Boogie', cursive; color:#4d1b80;" >
                 MiniUrl
             </h1>
             <h2 class="subtitle">
@@ -28,14 +29,14 @@
         <div class="container">
             <form method="POST" action="{{ url_for('short.add_link') }}">
                 <div class="field">
-                    <label class="label">Original Url</label>
+                    <label class="label" style="font-size: 25px;">Enter URL Here : </label>
                     <div class="control">
                         <input class="input" type="text" name="original_url">
                     </div>
                 </div>
                 <div class="control">
-                    <button type="submit" class="button is-info">
-                        Enter Url
+                    <button type="submit" class="button is-primary">
+                        Submit
                     </button>
                 </div>
                 <!-- <input type="submit"> -->
